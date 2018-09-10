@@ -87,7 +87,10 @@ $headers = array(
     lang('storage_mount')
 );
 
-$anchors = array(anchor_custom('/app/storage/devices', lang('base_return_to_summary')));
+$anchors = array(
+    anchor_custom('/app/storage/devices/create_partition/' . $device_encoded, "Create"), // ICI
+    anchor_custom('/app/storage/devices', lang('base_return_to_summary'))
+);
 
 foreach ($details['partitioning']['partitions'] as $id => $partition_info) {
 
