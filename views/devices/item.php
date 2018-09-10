@@ -6,8 +6,8 @@
  * @category   apps
  * @package    storage
  * @subpackage views
- * @author     ClearFoundation <developer@clearfoundation.com>
- * @copyright  2013 ClearFoundation
+ * @author     ClearFoundation ericampire.top@gmail.com
+ * @copyright  2018 ClearFoundation
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License version 3 or later
  * @link       http://www.clearfoundation.com/docs/developer/apps/storage/
  */
