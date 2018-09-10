@@ -62,8 +62,8 @@ foreach ($devices as $device => $details) {
     $device_encoded = strtr(base64_encode($device),  '+/=', '-_.');
 
     // Skip removable drives
-    if ($details['removable'])
-        continue;
+    // if ($details['removable'])
+    //     continue;
 
     // TODO: discuss icon strategy
     $in_use_icon = ($details['in_use']) ? '<span class="theme-icon-ok">&nbsp;</span>' : '';
