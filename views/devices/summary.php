@@ -72,9 +72,26 @@ foreach ($devices as $device => $details) {
 
     $item['title'] = $device;
     $item['action'] = '';
-    $item['anchors'] = button_set(
-        array(anchor_custom('/app/storage/devices/view/' . $device_encoded, lang('base_view_details')))
-    );
+    
+    $buttons = NULL;
+    if ($details['removable'] && $details['is_mounted']) {
+        $buttons = button_set(array(
+            anchor_custom('/app/storage/devices/view/' . $device_encoded, lang('base_view_details')),
+            anchor_custom('/app/storage/devices/unmount_device/' . $device_encoded . $id, "Demonter")
+        ));
+        
+    } elseif ($details['removable'] && !($details['is_mounted'])) {
+        $buttons = button_set(array(
+            anchor_custom('/app/storage/devices/view/' . $device_encoded, lang('base_view_details')),
+            anchor_custom('/app/storage/devices/mount_device/' . $device_encoded . $id, "Monter")
+        ));
+        
+    } else {
+        $buttons = button_set(array(anchor_custom('/app/storage/devices/view/' . $device_encoded, lang('base_view_details'))));
+    }
+    
+    $item['anchors'] = $buttons;
+    
     $item['details'] = array(
         $device,
         $identifier,
